@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Péssimas Escolhas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Creepster&family=Lobster+Two:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #3a3a3a; /* Cinza escuro para o fundo */
+            color: #e0e0e0; /* Texto principal mais claro */
+        }
+        .menu-title-main { /* Renomeado para evitar conflito com o nome da classe no HTML original */
+            font-family: 'Creepster', cursive;
+            color: #f7b733; /* Amarelo/Dourado vibrante */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        .menu-subtitle {
+            font-family: 'Lobster Two', cursive;
+            color: #bdc3c7; /* Cinza claro para o subtítulo */
+        }
+        .section-title {
+            font-family: 'Lobster Two', cursive;
+            font-weight: 700;
+            color: #e67e22; /* Laranja queimado/Âmbar escuro */
+            border-bottom: 2px solid #d35400; /* Laranja mais escuro para a borda */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .menu-item {
+            background-color: #4f4f4f; /* Cinza um pouco mais claro para os itens */
+            border: 1px solid #666666; /* Borda sutil */
+            border-radius: 0.75rem; /* Bordas mais arredondadas */
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .menu-item:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+            border-color: #f7b733; /* Destaque na borda ao pairar */
+        }
+        .menu-item h4 {
+            color: #f0e68c; /* Khaki claro/Dourado pálido para o nome do item */
+        }
+        .menu-item p {
+            color: #bdc3c7; /* Cinza claro para a descrição curta */
+        }
+
+        /* Estilização do Modal */
+        .modal-content {
+            background-color: #4a4a4a; /* Fundo do modal consistente */
+            color: #e0e0e0;
+            border-radius: 0.75rem;
+            border: 2px solid #f7b733;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: fadeInModal 0.4s ease-out;
+        }
+        @keyframes fadeInModal { /* Renomeado para evitar conflito com o nome da classe no HTML original */
+            from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .modal-content h3 { /* Título do modal */
+            color: #f7b733; /* Dourado para o título do modal */
+            font-family: 'Creepster', cursive;
+        }
+        .modal-content p { /* Mensagem do modal */
+            color: #e0e0e0;
+        }
+        .modal-content button { /* Botão do modal */
+            background-color: #c0392b; /* Vermelho escuro para o botão */
+            color: white;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s ease;
+        }
+        .modal-content button:hover {
+            background-color: #e74c3c; /* Vermelho mais claro ao pairar */
+        }
+
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #3a3a3a; /* Fundo da trilha da scrollbar */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888; /* Cor do polegar da scrollbar */
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f7b733; /* Cor do polegar ao pairar */
+        }
+
+        /* Footer */
+        #fine-print h3 {
+            color: #e67e22; /* Laranja para o título do rodapé */
+            font-family: 'Lobster Two', cursive;
+        }
+        #fine-print ul li {
+            color: #bdc3c7; /* Cinza claro para o texto do rodapé */
+        }
+        #fine-print {
+            border-top: 2px solid #666666; /* Borda do rodapé */
+        }
+    </style>
+</head>
+<body class="text-gray-800"> <div class="container mx-auto p-4 sm:p-6 md:p-8 max-w-3xl">
+        <header class="text-center my-8 md:my-12">
+            <h1 class="menu-title-main text-4xl sm:text-5xl md:text-6xl font-bold">THE BARSTOOL COACH'S MENU OF POOR LIFE CHOICES</h1>
+            <p class="menu-subtitle text-lg sm:text-xl italic mt-3">(Because therapy is expensive, but bad decisions are free)</p>
+        </header>
+
+        <section id="appetizers" class="mb-10">
+            <h2 class="section-title text-3xl sm:text-4xl">APPETIZERS <span class="text-xl text-gray-400 italic">(Starter Regrets)</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="menu-item p-5 cursor-pointer" tabindex="0" data-title="🍟 &quot;Stalking Your Ex's Wedding Pics&quot;" data-message="Relive their happiness, one pixelated photo at a time. Remember, it's not stalking if you're just 'keeping up'. <br><br><b>Cost:</b> 0.00 (Priceless emotional damage)">
+                    <h4 class="text-xl font-semibold">🍟 Stalking Your Ex's Wedding Pics</h4>
+                    <p class="text-sm italic mt-1">0.00 (priceless emotional damage)</p>
+                </div>
+                <div class="menu-item p-5 cursor-pointer" tabindex="0" data-title="🧀 &quot;Overpriced Crypto Dip&quot;" data-message="You were gonna be rich! Now you're just... experienced. At least you have a great story about that time you almost bought a virtual monkey. <br><br><b>Cost:</b> $19.99 (now worth $0.73)">
+                    <h4 class="text-xl font-semibold">🧀 Overpriced Crypto Dip</h4>
+                    <p class="text-sm italic mt-1">$19.99 (now worth $0.73)</p>
+                </div>
+                <div class="menu-item p-5 cursor-pointer md:col-span-2" tabindex="0" data-title="🥜 &quot;Unsolicited Life Advice&quot;" data-message="From someone who clearly has it all figured out (not). Guaranteed to be 100% unqualified and probably unhelpful. <br><br><b>Cost:</b> Free with first drink (and every subsequent one).">
+                    <h4 class="text-xl font-semibold">🥜 Unsolicited Life Advice</h4>
+                    <p class="text-sm italic mt-1">Free with first drink (100% unqualified)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="main-courses" class="mb-10">
+            <h2 class="section-title text-3xl sm:text-4xl">MAIN COURSES <span class="text-xl text-gray-400 italic">(Entrées of Shame)</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="menu-item p-5 cursor-pointer" tabindex="0" data-title="🍔 &quot;The Breakup Burger&quot;" data-message="A towering monument to your recent romantic failure. Layers of denial, anger, and a generous spread of drunk texting. Served with a side of extra tears and a playlist of sad songs. <br><br><b>Warning:</b> May cause spontaneous crying.">
+                    <h4 class="text-xl font-semibold">🍔 The Breakup Burger</h4>
+                    <p class="text-sm italic mt-1">Layers of denial, anger, and drunk texting. Comes with extra tears.</p>
+                </div>
+                <div class="menu-item p-5 cursor-pointer" tabindex="0" data-title="🌮 &quot;3am Taco Regret&quot;" data-message="It seemed like such a good idea at the time. Now, the cold light of day (or, you know, 11am) reveals the truth. You'll hate yourself in the morning, but damn, it was good. <br><br><b>Pairs well with:</b> Questionable life choices.">
+                    <h4 class="text-xl font-semibold">🌮 3am Taco Regret</h4>
+                    <p class="text-sm italic mt-1">You'll hate yourself in the morning (but damn, it's good now).</p>
+                </div>
+                <div class="menu-item p-5 cursor-pointer md:col-span-2" tabindex="0" data-title="🍕 &quot;Cold Pizza of Self-Loathing&quot;" data-message="The breakfast of champions... if the championship is in 'Making Poor Financial Decisions.' Enjoy this leftover slice of reality. <br><br><b>Tastes like:</b> Last night's mistakes.">
+                    <h4 class="text-xl font-semibold">🍕 Cold Pizza of Self-Loathing</h4>
+                    <p class="text-sm italic mt-1">Leftovers from poor financial decisions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sides" class="mb-10">
+            <h2 class="section-title text-3xl sm:text-4xl">SIDES <span class="text-xl text-gray-400 italic">(Complimentary Bad Habits)</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="menu-item p-5 cursor-pointer" tabindex="0" data-title="🍟 &quot;Fries With That Low Self-Esteem&quot;" data-message="Extra salty, just like your general disposition after scrolling through social media. They're not judging you, but these fries definitely are. <br><br><b>Goes great with:</b> Comparing yourself to others.">
+                    <h4 class="text-xl font-semibold">🍟 Fries With That Low Self-Esteem</h4> <p class="text-sm italic mt-1">Salty, just like your ex.</p>
+                </div>
+                <div class="menu-item p-5 cursor-pointer" tabindex="0" data-title="🥗 &quot;Salad of Good Intentions&quot;" data-message="Ah, the road to hell is paved with good intentions... and this salad. You ordered it. You might even take a bite. But we all know how this ends. <br><br><b>Spoiler:</b> You won't finish it. The fries are calling.">
+                    <h4 class="text-xl font-semibold">🥗 Salad of Good Intentions</h4>
+                    <p class="text-sm italic mt-1">(Spoiler: You won't finish it).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="drinks" class="mb-10">
+            <h2 class="section-title text-3xl sm:text-4xl">DRINKS <span class="text-xl text-gray-400 italic">(Liquid Courage & Consequences)</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                 <div class="menu-item p-5 cursor-pointer" tabindex="0" data-title="🍺 &quot;PBR of Poor Decisions&quot;" data-message="The official beverage of 'what was I thinking?' Tastes like college mistakes, questionable hookups, and that one time you tried to cut your own bangs. <br><br><b>Price:</b> $4.00 (and a little bit of your dignity).">
+                    <h4 class="text-xl font-semibold">🍺 PBR of Poor Decisions</h4>
+                    <p class="text-sm italic mt-1">$4.00 (tastes like college mistakes).</p>
+                </div>
+                <div class="menu-item p-5 cursor-pointer" tabindex="0" data-title="🍷 &quot;Cheap Wine & Cheaper Excuses&quot;" data-message="'I'll start my diet tomorrow.' 'One glass won't hurt.' 'It's practically fruit juice!' Sip on this delightful blend of denial and fermented grapes. <br><br><b>Pairs with:</b> Procrastination.">
+                    <h4 class="text-xl font-semibold">🍷 Cheap Wine & Cheaper Excuses</h4>
+                    <p class="text-sm italic mt-1">"I'll start my diet tomorrow."</p>
+                </div>
+                <div class="menu-item p-5 cursor-pointer md:col-span-2" tabindex="0" data-title="🥃 &quot;Therapist's Tears&quot;" data-message="Distilled from the pure frustration of listening to your problems week after week. Served straight, no chaser – just like the harsh realities your therapist gently tries to guide you through. <br><br><b>Warning:</b> May induce introspection (or just a headache).">
+                    <h4 class="text-xl font-semibold">🥃 Therapist's Tears</h4>
+                    <p class="text-sm italic mt-1">Straight, no chaser (like your ex).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="desserts" class="mb-10">
+            <h2 class="section-title text-3xl sm:text-4xl">DESSERTS <span class="text-xl text-gray-400 italic">(Sweet Revenge)</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="menu-item p-5 cursor-pointer" tabindex="0" data-title="🍦 &quot;Ice Cream for One&quot;" data-message="A whole pint, just for you. Because sharing is overrated, especially when you're wallowing. Dignity not included, spoon definitely is. <br><br><b>Flavor:</b> Existential Crisis Swirl.">
+                    <h4 class="text-xl font-semibold">🍦 Ice Cream for One</h4>
+                    <p class="text-sm italic mt-1">Pint included, dignity not included.</p>
+                </div>
+                <div class="menu-item p-5 cursor-pointer" tabindex="0" data-title="🍫 &quot;Chocolate of False Hope&quot;" data-message="'This time will be different!' you whisper, unwrapping the bar. Spoilers: It won't. But hey, at least chocolate is consistently good. <br><br><b>Warning:</b> May lead to more chocolate.">
+                    <h4 class="text-xl font-semibold">🍫 Chocolate of False Hope</h4>
+                    <p class="text-sm italic mt-1">This time will be different! (It won't).</p>
+                </div>
+            </div>
+        </section>
+
+        <footer id="fine-print" class="text-center mt-12 py-8">
+            <h3 class="text-2xl font-bold mb-4">FINE PRINT:</h3>
+            <ul class="space-y-2 italic">
+                <li>⚠️ All choices final (like your ex's restraining order).</li>
+                <li>💸 Cash only. Like your dating pool.</li>
+                <li>🚫 No refunds. Just like your life choices.</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="messageModal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center p-4 z-50 transition-opacity duration-300" aria-labelledby="modalTitle" role="dialog" aria-modal="true">
+        <div id="modalOverlay" class="absolute inset-0 cursor-pointer"></div> <div class="modal-content p-6 sm:p-8 max-w-md w-full relative mx-auto">
+            <h3 id="modalTitle" class="text-2xl sm:text-3xl font-bold mb-4 text-center"></h3>
+            <p id="modalMessage" class="text-base sm:text-lg mb-6 text-left leading-relaxed"></p>
+            <button id="closeModal" class="w-full py-3 px-4 text-lg transition-colors duration-200">
+                Got It, My Life is a Joke
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Wait for the DOM to be fully loaded before attaching event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuItems = document.querySelectorAll('.menu-item');
+            const modal = document.getElementById('messageModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMessage = document.getElementById('modalMessage');
+            const closeModalButton = document.getElementById('closeModal');
+            const modalOverlay = document.getElementById('modalOverlay');
+
+            // Function to open the modal
+            const openModal = (title, message) => {
+                modalTitle.innerHTML = title; // Use innerHTML to render emojis and HTML tags like <br>
+                modalMessage.innerHTML = message; // Use innerHTML for <br> and <b> tags
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                // Focus on the close button for accessibility
+                closeModalButton.focus(); 
+            };
+
+            // Function to close the modal
+            const closeModal = () => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto'; // Restore background scrolling
+            };
+
+            // Add click event listener to each menu item
+            menuItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const title = item.dataset.title;
+                    const message = item.dataset.message;
+                    openModal(title, message);
+                });
+                // Add keydown event listener for accessibility (Enter or Space key)
+                item.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault(); // Prevent default space scroll/click
+                        const title = item.dataset.title;
+                        const message = item.dataset.message;
+                        openModal(title, message);
+                    }
+                });
+            });
+
+            // Add click event listener to the close button
+            if (closeModalButton) {
+                closeModalButton.addEventListener('click', closeModal);
+            }
+
+            // Add click event listener to the modal overlay to close modal
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', closeModal);
+            }
+            
+            // Add keydown event listener to the document to close modal with Escape key
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
